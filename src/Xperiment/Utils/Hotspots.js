@@ -10,6 +10,8 @@ export default class Hotspots
         this.sizes = this.xperiment.sizes
         this.cursor = this.xperiment.cursor
         this.camera = this.xperiment.camera.instance
+        this.debug = this.xperiment.debug
+
         this.sceneReady = false
 
         this.points = [
@@ -26,6 +28,19 @@ export default class Hotspots
                 element: document.querySelector('.point-2')
             }
         ]
+
+        this.setClickable()
+
+        if(this.debug.active)
+        {
+            this.debugFolder = this.debug.debug.addFolder('Hotspots')
+            for(const point of this.points)
+            {
+                this.debugFolder.add(point.position, 'x').min(- 3).max(3).name(`x ${point.element.className}`)
+                this.debugFolder.add(point.position, 'y').min(- 3).max(3).name(`y ${point.element.className}`)
+                this.debugFolder.add(point.position, 'z').min(- 3).max(3).name(`z ${point.element.className}`)
+            }
+        }
     }
 
     setVisible()
@@ -38,6 +53,24 @@ export default class Hotspots
                 point.element.classList.add('visible')
             }
         }, 3000)
+    }
+
+    setClickable()
+    {
+        for(const point of this.points)
+        {
+            point.element.addEventListener('click', () =>
+            {   
+                if(point.element.classList.contains('toggled'))
+                {
+                    point.element.classList.remove('toggled')
+                }
+                else
+                {
+                    point.element.classList.add('toggled')
+                }
+            })
+        }
     }
 
     update()
