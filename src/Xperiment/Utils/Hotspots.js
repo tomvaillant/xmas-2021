@@ -16,16 +16,45 @@ export default class Hotspots
 
         this.points = [
             {
-                position: new THREE.Vector3(1.55, 0.3, - 0.6),
+                position: new THREE.Vector3(- 0.984, - 0.246, - 0.612),
                 element: document.querySelector('.point-0')
             },
             {
-                position: new THREE.Vector3(- 2, 0.8, - 1.6),
+                position: new THREE.Vector3(- 0.024, 0.198, - 1.794),
                 element: document.querySelector('.point-1')
             },
             {
-                position: new THREE.Vector3(- 2, 1, 2),
+                position: new THREE.Vector3(1.158, 0.492, 1.818),
                 element: document.querySelector('.point-2')
+            },
+            {
+                position: new THREE.Vector3(- 0.024, 0.714, - 0.612),
+                element: document.querySelector('.point-3')
+            },
+            {
+                position: new THREE.Vector3(- 3, 1.452, 0.348),
+                element: document.querySelector('.point-4')
+            },
+            {
+                position: new THREE.Vector3(2.262, 0.642, 0.048),
+                element: document.querySelector('.point-5')
+            },
+            {
+                position: new THREE.Vector3(- 2.088, 0.642, - 0.69),
+                element: document.querySelector('.point-6')
+            },
+            {
+                position: new THREE.Vector3(- 0.246, 0.42, - 0.612),
+                element: document.querySelector('.point-7')
+            },
+            {
+                position: new THREE.Vector3(- 0.246, 1.452, - 0.612),
+                element: document.querySelector('.point-8')
+            }
+            ,
+            {
+                position: new THREE.Vector3(- 3, 0.126, 0.714),
+                element: document.querySelector('.point-9')
             }
         ]
 

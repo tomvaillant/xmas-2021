@@ -81,7 +81,6 @@ body
     position: absolute;
     top: 50px;
     left: -120px;
-    width: 200px;
     padding: 20px;
     font-size: 14px;
     text-align: center;
@@ -97,4 +96,9 @@ body
 .point.toggled .text
 {
     opacity: 1;
+}
+
+.point button 
+{
+    cursor: pointer;
 }

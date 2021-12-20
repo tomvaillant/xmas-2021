@@ -1,0 +1,26 @@
+[
+    {
+      "Country": "USA",
+      "Trees": 20.8
+    },
+    {
+      "Country": "Germany",
+      "Trees": 19
+    },
+    {
+    "Country": "France",
+    "Trees": 9.2
+    },
+    {
+      "Country": "Denmark",
+      "Trees": 8.5
+    },
+    {
+      "Country": "Belgium",
+      "Trees": 5.2
+    },
+    {
+      "Country": "UK",
+      "Trees": 4.4
+    }
+]

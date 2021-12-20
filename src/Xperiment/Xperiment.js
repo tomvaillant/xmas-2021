@@ -9,7 +9,8 @@ import Resources from "./Utils/Resources"
 import sources from './sources.js'
 import Debug from "./Utils/Debug"
 import Hotspots from "./Utils/Hotspots"
-import Charts from "./Dataviz/Charts"
+import TreesSold from "./Dataviz/TreesSold"
+import TreesGrown from "./Dataviz/TreesGrown"
 
 let instance = null
 
@@ -42,7 +43,10 @@ export default class Xperiment
         this.world = new World()
         this.camera = new Camera()
         this.hotspots = new Hotspots()
-        this.charts = new Charts()
+        
+        new TreesSold()
+        new TreesGrown()
+        
         this.renderer = new Renderer()
 
         this.scene.add(this.overlay)

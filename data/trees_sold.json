@@ -1,0 +1,132 @@
+[
+ {
+   "Year": 2004,
+   "Sold": 27100000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2005,
+   "Sold": 32800000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2006,
+   "Sold": 28600000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2007,
+   "Sold": 31300000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2008,
+   "Sold": 28200000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2009,
+   "Sold": 28200000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2010,
+   "Sold": 27000000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2011,
+   "Sold": 30800000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2012,
+   "Sold": 24500000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2013,
+   "Sold": 33020000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2014,
+   "Sold": 26300000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2015,
+   "Sold": 25900000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2016,
+   "Sold": 27400000,
+   "Type": "Real"
+ },
+ {
+   "Year": 2004,
+   "Sold": 9000000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2005,
+   "Sold": 9300000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2006,
+   "Sold": 9300000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2007,
+   "Sold": 17400000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2008,
+   "Sold": 11700000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2009,
+   "Sold": 11700000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2010,
+   "Sold": 8200000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2011,
+   "Sold": 9500000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2012,
+   "Sold": 10900000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2013,
+   "Sold": 14700000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2014,
+   "Sold": 13900000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2015,
+   "Sold": 12500000,
+   "Type": "Fake"
+ },
+ {
+   "Year": 2016,
+   "Sold": 18600000,
+   "Type": "Fake"
+ }
+]
