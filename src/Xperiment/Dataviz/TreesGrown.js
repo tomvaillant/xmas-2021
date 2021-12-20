@@ -21,7 +21,8 @@ export default class TreesSold
             return a.Value - b.Value;
         })
 
-        console.log(sortedTrees)
+        const xAccessor = (d) => d.Country
+        const yAccessor = (d) => d.Trees
 
         let dimensions = {
             width: window.innerWidth * 0.5,
@@ -31,7 +32,7 @@ export default class TreesSold
             right: 10,
             bottom: 50,
             left: 50,
-            },
+            }
         }
         dimensions.boundedWidth = dimensions.width - dimensions.margin.left - dimensions.margin.right
         dimensions.boundedHeight = dimensions.height - dimensions.margin.top - dimensions.margin.bottom
@@ -43,62 +44,56 @@ export default class TreesSold
             .attr("width", dimensions.width)
             .attr("height", dimensions.height)
 
-        const bounds = wrapper.append("g")
+        const bounds = wrapper
+            .append("g")
             .style("transform", `translate(${dimensions.margin.left}px, ${dimensions.margin.top}px)`)
+
+        bounds.append("g")
             .attr("class", "bins")
+        bounds.append("g")
+            .attr("class", "x-axis")
+            .style("transform", `translateY(${dimensions.boundedHeight}px)`)
+            .append("text")
+            .attr("class", "x-axis-label")
 
-        
-        const x = d3.scaleBand()
+
+        const xScale = d3.scaleLinear()
+            .domain(d3.extent(sortedTrees, xAccessor))
             .range([0, dimensions.boundedWidth])
-            .domain(sortedTrees.map((d) => { d.Country }))
-            .padding(0.2)
+            .nice()
         
-        bounds.append("g")
-            .attr("transform", "translate(0," + dimensions.boundedHeight + ")")
-            .call(d3.axisBottom(x))
-            .selectAll("text")
-            .attr("transform", "translate(-10,0)rotate(-45)")
-            .style("text-anchor", "end");
+        const binsGenerator = d3.bin()
+            .domain(xScale.domain())
+            .value(xAccessor)
+            .thresholds(8)
 
-        // Add Y axis
-        const y = d3.scaleLinear()
-            .domain([0, 21])
-            .range([dimensions.boundedHeight, 0]);
+        // const bins = binsGenerator(trees)
         
-        bounds.append("g")
-            .call(d3.axisLeft(y))
+
+        // // Add Y axis
+        // const y = d3.scaleLinear()
+        //     .domain([0, 21])
+        //     .range([dimensions.boundedHeight, 0]);
+        
+        // bounds.append("g")
+        //     .call(d3.axisLeft(y))
 
         // Bars
-        bounds.selectAll("bins")
-        .data(sortedTrees)
-        .enter()
-        .append("rect")
-            .attr("x", (d) => { x(d.Country) })
-            .attr("y", (d) => { y(d.Value) })
-            .attr("width", x.bandwidth())
-            .attr("height", (d) => { dimensions.boundedHeight - y(d.Value) })
-            .attr("fill", "#69b3a2")
+        // bounds.selectAll("bins")
+        // .data(sortedTrees)
+        // .enter()
+        // .append("rect")
+        //     .attr("x", (d) => { x(d.Country) })
+        //     .attr("y", (d) => { y(d.Value) })
+        //     .attr("width", x.bandwidth())
+        //     .attr("height", (d) => { dimensions.boundedHeight - y(d.Value) })
+        //     .attr("fill", "#69b3a2")
 
-        // // init static elements
-        // bounds.append("g")
-        //     .attr("class", "bins")
-        // bounds.append("line")
-        //     .attr("class", "mean")
-        // bounds.append("g")
-        //     .attr("class", "x-axis")
-        //     .style("transform", `translateY(${dimensions.boundedHeight}px)`)
-        //     .append("text")
-        //     .attr("class", "x-axis-label")
+       
 
         // // 4. Create scales
 
-        // const metricAccessor = d => d.Country
-        // const yAccessor = d => d.Trees
-
-        // const xScale = d3.scaleLinear()
-        //     .domain(d3.extent(trees, metricAccessor))
-        //     .range([0, dimensions.boundedWidth])
-        //     .nice()
+        
 
         // const binsGenerator = d3.bin()
         //     .domain(xScale.domain())

@@ -51,11 +51,6 @@ export default class Hotspots
                 position: new THREE.Vector3(- 0.246, 1.452, - 0.612),
                 element: document.querySelector('.point-8')
             }
-            ,
-            {
-                position: new THREE.Vector3(- 3, 0.126, 0.714),
-                element: document.querySelector('.point-9')
-            }
         ]
 
         this.setClickable()
