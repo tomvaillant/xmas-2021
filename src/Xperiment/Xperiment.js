@@ -11,6 +11,7 @@ import Debug from "./Utils/Debug"
 import Hotspots from "./Utils/Hotspots"
 import TreesSold from "./Dataviz/TreesSold"
 import TreesGrown from "./Dataviz/TreesGrown"
+import Spending from "./Dataviz/Spending"
 
 let instance = null
 
@@ -46,6 +47,7 @@ export default class Xperiment
         
         new TreesSold()
         new TreesGrown()
+        new Spending()
         
         this.renderer = new Renderer()
 

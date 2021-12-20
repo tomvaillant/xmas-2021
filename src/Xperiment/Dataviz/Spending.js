@@ -1,30 +1,24 @@
 import Xperiment from "../Xperiment"
 import * as d3 from "../../../d3.v6"
-import trees from "../../../data/trees_sold.json"
+import spending from "../../../data/xmas_spending.json"
 
-export default class TreesSold
+export default class Spending
 {
     constructor()
     {
         this.xperiment = new Xperiment()
-        this.dataset = d3.json(trees)
 
         this.drawLineChart()
     }
 
-    drawLineChart(metric)
+    drawLineChart()
     {
-      
         // Access Data
         const dateParser = d3.timeParse("%Y")
-        const yAccessor = d => d.Sold
+        const yAccessor = d => d.Spend
         const xAccessor = d => dateParser(d.Year)
-        const treesAccessor = d => d.Sold
-        const treesReal = trees.filter(i => i.Type === "Real")
-        const treesFake = trees.filter(i => i.Type === "Fake")
 
         // 2. Create chart dimensions
-
         let dimensions = {
             width: window.innerWidth * 0.5,
             height: 400,
@@ -44,7 +38,7 @@ export default class TreesSold
 
         // 3. Draw canvas
 
-        const wrapper = d3.select(".data-trees")
+        const wrapper = d3.select(".data-spending")
             .append("svg")
             .attr("width", dimensions.width)
             .attr("height", dimensions.height)
@@ -59,12 +53,12 @@ export default class TreesSold
         // 4. Create scales
 
         const yScale = d3.scaleLinear()
-            .domain(d3.extent(trees, yAccessor))
+            .domain(d3.extent(spending, yAccessor))
             .range([dimensions.boundedHeight, 0])
             .nice()
 
         const xScale = d3.scaleTime()
-            .domain(d3.extent(trees, xAccessor))
+            .domain(d3.extent(spending, xAccessor))
             .range([0, dimensions.boundedWidth])
 
         // // 5. Draw data
@@ -73,14 +67,8 @@ export default class TreesSold
             .x(d => xScale(xAccessor(d)))
             .y(d => yScale(yAccessor(d)))
 
-        let lineReal = bounds.append("path")
-            .attr("d", lineGenerator(treesReal))
-            .attr("fill", "none")
-            .attr("stroke", "#af9358")
-            .attr("stroke-width", 2)
-
-        let lineFake = bounds.append("path")
-            .attr("d", lineGenerator(treesFake))
+        let line = bounds.append("path")
+            .attr("d", lineGenerator(spending))
             .attr("fill", "none")
             .attr("stroke", "#af9358")
             .attr("stroke-width", 2)
@@ -101,6 +89,5 @@ export default class TreesSold
             .style("transform", `translateY(${
                 dimensions.boundedHeight
             }px)`)
-        
     }
 }

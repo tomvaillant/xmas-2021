@@ -94,6 +94,13 @@ export default class Hotspots
                     point.element.classList.add('toggled')
                 }
             })
+            // window.addEventListener('click', () => 
+            // {
+            //     if(point.element.classList.contains('toggled'))
+            //     {
+            //         point.element.classList.remove('toggled')
+            //     }
+            // })
         }
     }
 
