@@ -26,8 +26,8 @@ export default class TreesSold
         // 2. Create chart dimensions
 
         let dimensions = {
-            width: window.innerWidth * 0.5,
-            height: 400,
+            width: window.innerWidth * 0.4,
+            height: 300,
             margin: {
                 top: 15,
                 right: 15,
@@ -76,19 +76,19 @@ export default class TreesSold
         let lineReal = bounds.append("path")
             .attr("d", lineGenerator(treesReal))
             .attr("fill", "none")
-            .attr("stroke", "#af9358")
+            .attr("stroke", "#146B3A")
             .attr("stroke-width", 2)
 
         let lineFake = bounds.append("path")
             .attr("d", lineGenerator(treesFake))
             .attr("fill", "none")
-            .attr("stroke", "#af9358")
+            .attr("stroke", "#BB2528")
             .attr("stroke-width", 2)
 
         // // 6. Draw peripherals
 
         const yAxisGenerator = d3.axisLeft()
-            .scale(yScale)
+            .scale(yScale).tickFormat(d => `${d / 1000000}M`)
 
         const yAxis = bounds.append("g")
             .call(yAxisGenerator)

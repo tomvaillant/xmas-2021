@@ -20,7 +20,7 @@ export default class Spending
 
         // 2. Create chart dimensions
         let dimensions = {
-            width: window.innerWidth * 0.5,
+            width: window.innerWidth * 0.4,
             height: 400,
             margin: {
                 top: 15,
@@ -70,7 +70,7 @@ export default class Spending
         let line = bounds.append("path")
             .attr("d", lineGenerator(spending))
             .attr("fill", "none")
-            .attr("stroke", "#af9358")
+            .attr("stroke", "#BB2528")
             .attr("stroke-width", 2)
 
         // // 6. Draw peripherals
@@ -89,5 +89,6 @@ export default class Spending
             .style("transform", `translateY(${
                 dimensions.boundedHeight
             }px)`)
+            
     }
 }

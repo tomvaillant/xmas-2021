@@ -36,7 +36,7 @@ export default class Hotspots
                 element: document.querySelector('.point-4')
             },
             {
-                position: new THREE.Vector3(2.262, 0.642, 0.048),
+                position: new THREE.Vector3(- 3, - 0.174, 0.786),
                 element: document.querySelector('.point-5')
             },
             {
@@ -48,7 +48,7 @@ export default class Hotspots
                 element: document.querySelector('.point-7')
             },
             {
-                position: new THREE.Vector3(- 0.246, 1.452, - 0.612),
+                position: new THREE.Vector3(- 1.572, 1.23, - 0.612),
                 element: document.querySelector('.point-8')
             }
         ]
@@ -81,6 +81,9 @@ export default class Hotspots
 
     setClickable()
     {
+        const labels = document.querySelectorAll('label')
+        console.log(labels)
+
         for(const point of this.points)
         {
             point.element.addEventListener('click', () =>
@@ -88,19 +91,22 @@ export default class Hotspots
                 if(point.element.classList.contains('toggled'))
                 {
                     point.element.classList.remove('toggled')
+                    for(const point of this.points)
+                    {
+                        point.element.firstChild.style.opacity = 1
+                        point.element.firstChild.style.pointerEvents = "auto"
+                    }
                 }
                 else
                 {
                     point.element.classList.add('toggled')
+                    for(const point of this.points)
+                    {
+                        point.element.firstChild.style.opacity = 0
+                        point.element.firstChild.style.pointerEvents = "none"
+                    }
                 }
             })
-            // window.addEventListener('click', () => 
-            // {
-            //     if(point.element.classList.contains('toggled'))
-            //     {
-            //         point.element.classList.remove('toggled')
-            //     }
-            // })
         }
     }
 

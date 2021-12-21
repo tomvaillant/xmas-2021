@@ -53,15 +53,33 @@ body
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #00000077;
-    color: #ffffff;
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
     line-height: 40px;
     font-size: 14px;
     cursor: pointer;
+    color: #ffff;
     transform: scale(0, 0);
     transition: transform 0.3s;
+    transition: opacity 1s ease-in-out;
+}
+
+.point .label.red {
+    background: #BB2528;
+    transition: color 0.3s;
+}
+.point .label.red:hover {
+    background: white;
+    color: #BB2528;
+}
+
+.point .label.green {
+    background: #146B3A;
+    transition: color 0.3s;
+}
+.point .label.green:hover {
+    background: white;
+    color: #146B3A;
 }
 
 .point.visible .label
@@ -79,37 +97,41 @@ body
 .point .text
 {
     opacity: 0;
-    position: absolute;
-    top: 50px;
-    left: -120px;
     padding: 20px;
     font-size: 14px;
     text-align: center;
     border-radius: 6px;
-    background: #00000077;
-    color: #ffffff;
     line-height: 1.3em;
     font-family: Helvetica, Arial, sans-serif;
     transition: opacity 0.3s;
     pointer-events: none;
+    background: #ffff;
+}
+
+.point .text h2 
+{
+    font-size: 18px;
+    color: #146B3A;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+
+.point .text-sizer
+{
+    position: absolute;
+    top: 35px;
+    left: -135px;
+    color: black;
+    margin: auto;
+    min-width: 300px;
+    max-width: 400px;
 }
 
 .point .chart
 {
-    opacity: 0;
     position: absolute;
     top: -25vh;
     left: -36vh;
-    padding: 20px;
-    font-size: 14px;
-    text-align: center;
-    border-radius: 6px;
-    background: #00000077;
-    color: #ffffff;
-    line-height: 1.3em;
-    font-family: Helvetica, Arial, sans-serif;
-    transition: opacity 0.3s;
-    pointer-events: none;
 }
 
 .point.toggled .text
@@ -126,4 +148,18 @@ body
 {
     cursor: pointer;
     pointer-events: auto;
+}
+
+.point ul{
+    text-align: left;
+}
+
+.point .close
+{
+    cursor: pointer;
+    pointer-events: auto;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 35px;
 }

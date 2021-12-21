@@ -18,10 +18,11 @@ export default class TreesSold
         {
             b.Value - a.Value
         })
+        sortedTrees.reverse()
 
         let dimensions = {
-            width: window.innerWidth * 0.5,
-            height: window.innerWidth * 0.3,
+            width: window.innerWidth * 0.4,
+            height: window.innerWidth * 0.2,
             margin: {
             top: 30,
             right: 10,
@@ -73,7 +74,7 @@ export default class TreesSold
               .attr("y", d => yScale(d.Trees))
               .attr("width", xScale.bandwidth())
               .attr("height", d => dimensions.boundedHeight - yScale(d.Trees))
-              .attr("fill", "#69b3a2")
+              .attr("fill", "#146B3A")
 
     }
 }
