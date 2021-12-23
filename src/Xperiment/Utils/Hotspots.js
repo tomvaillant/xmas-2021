@@ -82,7 +82,6 @@ export default class Hotspots
     setClickable()
     {
         const labels = document.querySelectorAll('label')
-        console.log(labels)
 
         for(const point of this.points)
         {

@@ -43,14 +43,21 @@ export default class Xperiment
         this.overlay = this.resources.overlay
         this.world = new World()
         this.camera = new Camera()
-        this.hotspots = new Hotspots()
-        
-        new TreesSold()
-        new TreesGrown()
-        new Spending()
+
+        if(this.sizes.width > 500)
+        {
+            this.hotspots = new Hotspots()
+            new TreesSold()
+            new TreesGrown()
+            new Spending()
+            this.resources.on('ready', () => 
+            {
+                this.hotspots.setVisible()
+            })
+        }
+
         
         this.renderer = new Renderer()
-
         this.scene.add(this.overlay)
 
         this.sizes.on('resize', () => 
@@ -61,11 +68,6 @@ export default class Xperiment
         this.time.on('tick', () => 
         {
             this.update()
-        })
-
-        this.resources.on('ready', () => 
-        {
-            this.hotspots.setVisible()
         })
     }
 
@@ -79,7 +81,7 @@ export default class Xperiment
     {
         this.camera.update()
         this.world.update()
-        this.hotspots.update()
+        this.hotspots && this.hotspots.update()
         this.renderer.update()
     }
 }

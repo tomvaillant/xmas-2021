@@ -75,6 +75,40 @@ export default class TreesSold
               .attr("width", xScale.bandwidth())
               .attr("height", d => dimensions.boundedHeight - yScale(d.Trees))
               .attr("fill", "#146B3A")
+        
+        const tooltip = d3.select("#tooltip")
+        const yAccessor = d => d.Trees
+
+        // const onMouseEnter = (e, datum) => {
+        //     console.log('from mouse hover', datum)
+
+            // tooltip.select("#count")
+            //     .text(sortedTrees.map(yAccessor(datum)))
+            
+            // const x = xScale(datum.x0)
+            //     + (xScale(datum.x1) - xScale(datum.x0)) / 2
+            //     + dimensions.margin.left
+            // const y = yScale(yAccessor(datum))
+            //     + dimensions.margin.top
+
+            // tooltip.style("transform", `translate(`
+            //     + `calc( -50% + ${x}px),`
+            //     + `calc(-100% + ${y}px)`
+            //     + `)`)
+
+            // tooltip.style("opacity", 1)
+        //   }
+
+          
+        // const onMouseLeave = () => {
+        //     tooltip.style("opacity", 0)
+        //   }
+            
+        // console.log(bounds.select("rect"))
+        
+        // bounds.select("rect")
+        //     .on("mouseenter", onMouseEnter())
+        //     .on("mouseleave", onMouseLeave())
 
     }
 }
