@@ -16,7 +16,7 @@ export default class Hotspots
 
         this.points = [
             {
-                position: new THREE.Vector3(- 0.984, - 0.246, - 0.612),
+                position: new THREE.Vector3(- 0.984, 0.42, - 0.612),
                 element: document.querySelector('.point-0')
             },
             {
@@ -24,31 +24,31 @@ export default class Hotspots
                 element: document.querySelector('.point-1')
             },
             {
-                position: new THREE.Vector3(1.158, 0.492, 1.818),
+                position: new THREE.Vector3(1.158, - 0.024, 1.818),
                 element: document.querySelector('.point-2')
             },
             {
-                position: new THREE.Vector3(- 0.024, 0.714, - 0.612),
+                position: new THREE.Vector3(0.492, - 0.246, - 0.612),
                 element: document.querySelector('.point-3')
             },
             {
-                position: new THREE.Vector3(- 3, 1.452, 0.348),
+                position: new THREE.Vector3(- 3, - 0.54, 0.348),
                 element: document.querySelector('.point-4')
             },
             {
-                position: new THREE.Vector3(- 3, - 0.174, 0.786),
+                position: new THREE.Vector3(- 3, 0.42, 0.786),
                 element: document.querySelector('.point-5')
             },
             {
-                position: new THREE.Vector3(- 2.088, 0.642, - 0.69),
+                position: new THREE.Vector3(- 1.794, 0.048, - 0.69),
                 element: document.querySelector('.point-6')
             },
             {
-                position: new THREE.Vector3(- 0.246, 0.42, - 0.612),
+                position: new THREE.Vector3(- 0.246, - 0.174, - 0.612),
                 element: document.querySelector('.point-7')
             },
             {
-                position: new THREE.Vector3(- 1.572, 1.23, - 0.612),
+                position: new THREE.Vector3(- 1.572, - 1.128, - 0.612),
                 element: document.querySelector('.point-8')
             }
         ]
@@ -81,7 +81,6 @@ export default class Hotspots
 
     setClickable()
     {
-        const labels = document.querySelectorAll('label')
 
         for(const point of this.points)
         {
@@ -117,8 +116,8 @@ export default class Hotspots
             { 
                 const screenPosition = point.position.clone()
                 screenPosition.project(this.camera)
-                const translateX = screenPosition.x * (this.sizes.width * 0.5) + (this.cursor.cursor.x)
-                const translateY = screenPosition.y * (this.sizes.height * 0.5) + (this.cursor.cursor.y * 50)
+                const translateX = screenPosition.x * this.sizes.width * 0.5 - (this.cursor.cursor.x * 10)
+                const translateY = - screenPosition.y * this.sizes.height * 0.5 - (this.cursor.cursor.y * 10)
                 point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
             }
         }

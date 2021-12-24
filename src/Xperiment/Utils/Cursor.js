@@ -14,8 +14,8 @@ export default class Cursor extends EventEmitter
         // Mousemove
         window.addEventListener('mousemove', (event) =>
         {
-            this.cursor.x = (event.clientX / this.sizes.width - 0.5) / 2
-            this.cursor.y = (event.clientY / this.sizes.height - 0.5) / 2
+            this.cursor.x = (event.clientX / this.sizes.width - 0.5)
+            this.cursor.y = (event.clientY / this.sizes.height - 0.5)
         })
     }
 }
