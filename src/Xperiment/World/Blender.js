@@ -25,11 +25,11 @@ export default class Blender
     }
     setMaterials()
     {
-        this.orangeColor = new THREE.Color("rgb(221, 87, 28)")
+        this.orangeColor = new THREE.Color("rgb(255, 172, 28)")
         this.bakedMaterial = new THREE.MeshBasicMaterial({ map: this.bakedTexture })
-        this.poleLightMaterial = new THREE.MeshStandardMaterial({ emissive: this.orangeColor, emissiveIntensity: 2 })
-        this.windowMaterial = new THREE.MeshStandardMaterial({ emissive: this.orangeColor, emissiveIntensity: 2 })
-        this.signTextMaterial = new THREE.MeshStandardMaterial({ emissive: 0xffffe5 })
+        this.poleLightMaterial = new THREE.MeshBasicMaterial({ color: this.orangeColor })
+        this.windowMaterial = new THREE.MeshBasicMaterial({ color: this.orangeColor })
+        this.signTextMaterial = new THREE.MeshBasicMaterial({ color: 0xffffe5 })
 
     }
     setScene()
